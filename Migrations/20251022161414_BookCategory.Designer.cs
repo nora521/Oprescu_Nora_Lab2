@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Oprescu_Nora_Lab2.Data;
 
@@ -11,9 +12,11 @@ using Oprescu_Nora_Lab2.Data;
 namespace Oprescu_Nora_Lab2.Migrations
 {
     [DbContext(typeof(Oprescu_Nora_Lab2Context))]
-    partial class Oprescu_Nora_Lab2ContextModelSnapshot : ModelSnapshot
+    [Migration("20251022161414_BookCategory")]
+    partial class BookCategory
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

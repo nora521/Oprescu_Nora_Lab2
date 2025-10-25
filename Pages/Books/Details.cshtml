@@ -30,6 +30,22 @@
         <dd cless="col-sm-10">
             @Html.DisplayFor(model => model.Book.PublishingDate)
         </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Book.BookCategories)
+        </dt>
+        <dd cless="col-sm-10">
+            @if (Model.Book.BookCategories != null && Model.Book.BookCategories.Any())
+            {
+                foreach (var bc in Model.Book.BookCategories)
+                {
+                    <div>@(bc.Category?.CategoryName ?? ",")</div>
+                }
+            }
+            else
+            {
+                <div>No Categories</div>
+            }
+        </dd>
     </dl>
 </div>
 <div>
