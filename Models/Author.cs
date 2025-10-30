@@ -1,4 +1,6 @@
-﻿namespace Oprescu_Nora_Lab2.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Oprescu_Nora_Lab2.Models
 {
     public class Author
     {
@@ -6,9 +8,15 @@
         public string FirstName { get; set; }
         public string LastName { get; set; }
 
-        public ICollection<Book>? Books { get; set; }
+       
 
-        public string AuthorName => $"{FirstName} {LastName}";
+        [Display (Name ="Full Name")]
+        public string FullName
+        {
+            get { return LastName + ", " + FirstName; } 
+        }
+
+        public ICollection<Book>? Books { get; set; }
 
     }
 }
